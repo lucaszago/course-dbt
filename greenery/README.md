@@ -6,6 +6,7 @@
 
 SELECT COUNT(USER_ID) FROM USERS;
 * On average, how many orders do we receive per hour?
+
 **7.52 orders**
 
 WITH CTE AS (
