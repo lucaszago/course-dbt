@@ -1,10 +1,13 @@
 #### Project Questions
 
 * How many users do we have?
+
 **130 Users** 
+
 SELECT COUNT(USER_ID) FROM USERS;
 * On average, how many orders do we receive per hour?
 **7.52 orders**
+
 WITH CTE AS (
 SELECT DATE_TRUNC(hour,CREATED_AT) AS HOURS
        ,COUNT(DISTINCT ORDER_ID) AS ORDERS_COUNT
@@ -15,7 +18,9 @@ SELECT ROUND(AVG(ORDERS_COUNT),2) AS AVG_ORDERS_RECEIVED
 FROM CTE;
 
 * On average, how long does an order take from being placed to being delivered?
+
 **Average of: 3.89 days**
+
 WITH CTE AS(
 SELECT 
 DATEDIFF(day,DATE_TRUNC(day,CREATED_AT),DATE_TRUNC(day,DELIVERED_AT)) AS COUNT_DAYS
@@ -28,7 +33,9 @@ FROM CTE;
 Note: you should consider a purchase to be a single order. In other words, if a user places one order for 3 products, they are considered to have made 1 purchase.
 
 * On average, how many unique sessions do we have per hour?
+
 **Unique sessions: 16.33**
+
 WITH CTE AS (SELECT 
 DATE_TRUNC(hour,CREATED_AT) AS hours,
 COUNT(DISTINCT SESSION_ID) AS unique_sessions
