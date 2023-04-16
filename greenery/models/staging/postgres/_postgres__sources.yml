@@ -7,7 +7,7 @@ sources:
     tables: 
       - name: orders 
       - name: users
-      - name: adresses
+      - name: addresses
       - name: events
       - name: products 
       - name: order_items
