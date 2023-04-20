@@ -1,6 +1,10 @@
-WITH source AS (
+
+  create or replace  view dev_db.dbt_lukaszagohotmailcom.stg_users
+  
+   as (
+    WITH source AS (
     SELECT * FROM 
-    {{ source('postgres','users')}}
+    raw.public.users
 )
 
 SELECT 
@@ -13,3 +17,4 @@ SELECT
     ,updated_at
     ,address_id
 FROM source
+  );

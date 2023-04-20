@@ -1,6 +1,6 @@
 with source as (
     SELECT * 
-    FROM {{ source('postgres','promos') }}
+    FROM raw.public.promos
 
 )
 
@@ -8,4 +8,4 @@ SELECT
     promo_id
     ,discount
     ,status
-FROM source 
+FROM source

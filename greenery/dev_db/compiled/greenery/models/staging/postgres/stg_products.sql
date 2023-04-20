@@ -1,6 +1,6 @@
 with source AS (
     SELECT * 
-    FROM {{ source('postgres', 'products') }}
+    FROM raw.public.products
 )
 SELECT 
     product_id

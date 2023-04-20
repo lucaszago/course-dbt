@@ -1,6 +1,10 @@
-with source AS (
+
+  create or replace  view dev_db.dbt_lukaszagohotmailcom.stg_events
+  
+   as (
+    with source AS (
     SELECT * FROM 
-    {{ source('postgres','events') }}
+    raw.public.events
 )
 
 SELECT 
@@ -13,3 +17,4 @@ SELECT
     ,order_id
     ,product_id
 FROM source
+  );

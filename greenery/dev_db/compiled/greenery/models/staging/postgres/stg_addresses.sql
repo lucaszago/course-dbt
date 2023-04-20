@@ -1,6 +1,5 @@
-
 with source AS (
-    SELECT * FROM {{ source('postgres', 'addresses') }}
+    SELECT * FROM raw.public.addresses
 )
 SELECT 
     address_id
@@ -8,4 +7,4 @@ SELECT
     ,zipcode
     ,state
     ,country
-FROM source 
+FROM source

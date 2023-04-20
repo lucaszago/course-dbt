@@ -1,5 +1,5 @@
 WITH source AS (
-    SELECT * FROM {{ source('postgres','order_items')}}
+    SELECT * FROM raw.public.order_items
 )
 
 SELECT 

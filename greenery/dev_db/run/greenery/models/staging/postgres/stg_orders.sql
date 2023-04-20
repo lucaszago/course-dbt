@@ -1,6 +1,10 @@
-with source as (
+
+  create or replace  view dev_db.dbt_lukaszagohotmailcom.stg_orders
+  
+   as (
+    with source as (
     SELECT * 
-    FROM {{ source('postgres','orders') }}
+    FROM raw.public.orders
 )
 
 SELECT 
@@ -18,3 +22,4 @@ SELECT
     ,delivered_at
     ,status 
 FROM source
+  );

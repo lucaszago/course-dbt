@@ -1,6 +1,6 @@
 with source AS (
     SELECT * FROM 
-    {{ source('postgres','events') }}
+    raw.public.events
 )
 
 SELECT 
