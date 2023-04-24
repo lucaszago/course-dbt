@@ -1,0 +1,5 @@
+version: 2 
+
+models: 
+  - name: dim_orders
+    description: Table all about orders and orders_items.

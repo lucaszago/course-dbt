@@ -1,0 +1,5 @@
+version: 2 
+
+models: 
+  - name: dim_products
+    description: Table all about products.

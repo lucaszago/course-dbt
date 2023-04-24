@@ -1,0 +1,37 @@
+version: 2
+
+models: 
+ - name: fct_sales
+   description: All details about sales
+   columns:
+    - name: ORDER_ID
+      description: identifier of order
+    - name: USER_ID
+      description: identifier of user
+      tests: 
+       - not null
+    - name: FIRST_NAME
+      description: user first name
+    - name: LAST_NAME
+      description: user last name
+    - name: EMAIL
+      description: user email
+    - name: PRODUCT_ID
+      description: product identifier
+    - name: ORDER_TOTAL
+      description: total value of an order
+    - name: CREATED_AT
+      description: date order 
+    - name: RUNNING_TOTAL_PER_ID
+      description: cum sum of order per id
+    - name: RUNNING_TOTAL_PER_DATE
+      description: cum sum of order per date
+    - name: QUANTITY
+      description: quantity of product sold 
+    - name: PRODUCT_NAME
+      description: name of product 
+    - name: PRICE
+      description: price of product
+    - name: PRODUCT_SOLD_VALUE
+      description: product sold total
+    

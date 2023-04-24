@@ -1,0 +1,5 @@
+version: 2
+
+models: 
+  - name: int_products_agg
+    description: A table containing some useful information about products
