@@ -16,7 +16,7 @@ final AS (
 SELECT 
     order_items.ORDER_ID,
     order_items.PRODUCT_ID,
-    int_prod.SOLD AS product_sold_value
+    int_prod.SOLD AS Revenue
 FROM order_items 
 LEFT JOIN int_prod
     ON order_items.PRODUCT_ID = int_prod.PRODUCT_ID

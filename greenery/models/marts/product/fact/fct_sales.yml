@@ -9,7 +9,7 @@ models:
     - name: USER_ID
       description: identifier of user
       tests: 
-       - not null
+       - not_null
     - name: FIRST_NAME
       description: user first name
     - name: LAST_NAME
@@ -32,6 +32,8 @@ models:
       description: name of product 
     - name: PRICE
       description: price of product
+      tests:
+       - not_null
     - name: PRODUCT_SOLD_VALUE
       description: product sold total
     
