@@ -17,6 +17,7 @@ FROM dev_db.dbt_lukaszagohotmailcom.stg_order_items
 ,final AS (
     SELECT 
     products.PRODUCT_ID,
+    products.PRODUCT_NAME,
     (products.PRICE * order_items.QUANTITY) AS sold
 FROM products
 LEFT JOIN order_items

@@ -15,6 +15,7 @@ final AS (
 SELECT 
     order_items.ORDER_ID,
     order_items.PRODUCT_ID,
+    int_prod.PRODUCT_NAME,
     int_prod.SOLD AS Revenue
 FROM order_items 
 LEFT JOIN int_prod
