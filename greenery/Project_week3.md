@@ -1,6 +1,7 @@
 What is our overall conversion rate?
 Conversion rate is defined as the # of unique sessions with a purchase event / total number of unique sessions.
-Answer: 62.4567
+
+* Answer: 62.4567
 
 Query: 
 ```
