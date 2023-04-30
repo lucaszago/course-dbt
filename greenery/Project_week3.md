@@ -23,7 +23,7 @@ What is our conversion rate by product?
 Conversion rate by product is defined as the # of unique sessions with a purchase event of that product / total number of unique sessions that viewed that product
 
 Query: 
-````
+```
 WITH p_event AS (
 SELECT 
 PRODUCT_NAME,
