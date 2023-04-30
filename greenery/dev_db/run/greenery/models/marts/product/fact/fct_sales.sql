@@ -46,7 +46,7 @@ final AS (
     orders.QUANTITY,
     st_products.PRODUCT_NAME,
     st_products.PRICE,
-    products.PRODUCT_SOLD_VALUE
+    products.REVENUE
     FROM orders 
     LEFT JOIN users 
         ON orders.USER_ID = users.USER_ID

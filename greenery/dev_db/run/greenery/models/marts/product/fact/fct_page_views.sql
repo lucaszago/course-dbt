@@ -16,18 +16,29 @@ products  AS (
 ), 
 final AS (
      SELECT 
-     events.event_id
+    events.event_id
     ,events.session_id
     ,products.PRODUCT_ID
-    , products.PRODUCT_NAME
-    , sum(case when events.event_type = 'add_to_cart' then 1 else 0 end) as add_to_carts
-    , sum(case when events.event_type = 'checkout' then 1 else 0 end) as checkouts
-    , sum(case when events.event_type = 'package_shipped' then 1 else 0 end) as package_shippeds
-    , sum(case when events.event_type = 'page_view' then 1 else 0 end) as page_views
-    from events 
-    left join products
-        on events.product_id = products.product_id
-    group by 1, 2, 3,4
+    ,products.PRODUCT_NAME
+     
+
+    
+
+    
+      ,SUM(CASE WHEN EVENT_TYPE = 'page_view' THEN 1 ELSE 0 END) AS page_views
+    
+      ,SUM(CASE WHEN EVENT_TYPE = 'add_to_cart' THEN 1 ELSE 0 END) AS add_to_carts
+    
+      ,SUM(CASE WHEN EVENT_TYPE = 'checkout' THEN 1 ELSE 0 END) AS checkouts
+    
+      ,SUM(CASE WHEN EVENT_TYPE = 'package_shipped' THEN 1 ELSE 0 END) AS package_shippeds
+    
+
+
+    FROM events
+    LEFT JOIN products
+        ON events.product_id = products.product_id
+    GROUP BY 1, 2, 3,4
 )
 SELECT * FROM final
         );

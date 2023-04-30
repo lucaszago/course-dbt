@@ -42,7 +42,7 @@ final AS (
 SELECT 
 p_event.PRODUCT_ID,
 p_event.PRODUCT_NAME,
-p_event.purchase_event/viewed AS con_rate_by_product
+p_event.purchase_event/viewed * 100 AS con_rate_by_product
 FROM p_event
 LEFT JOIN page_view
 ON p_event.PRODUCT_ID = page_view.PRODUCT_ID
