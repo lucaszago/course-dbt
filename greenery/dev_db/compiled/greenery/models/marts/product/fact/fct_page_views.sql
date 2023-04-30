@@ -13,6 +13,7 @@ final AS (
      SELECT 
      events.event_id
     ,events.session_id
+    ,products.PRODUCT_ID
     , products.PRODUCT_NAME
     , sum(case when events.event_type = 'add_to_cart' then 1 else 0 end) as add_to_carts
     , sum(case when events.event_type = 'checkout' then 1 else 0 end) as checkouts
@@ -21,6 +22,6 @@ final AS (
     from events 
     left join products
         on events.product_id = products.product_id
-    group by 1, 2, 3
+    group by 1, 2, 3,4
 )
 SELECT * FROM final
