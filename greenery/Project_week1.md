@@ -36,9 +36,9 @@ FROM CTE;
 
 * How many users have only made one purchase? Two purchases? Three+ purchases?
 
-**1 purchase: 25**
-**2 purchases: 28**
-**3 purchases: 71**
+- 1 purchase: 25
+- 2 purchases: 28
+- 3 purchases: 71
 ```
 WITH CTE AS (SELECT USER_ID,
        COUNT(DISTINCT ORDER_ID) AS orders
