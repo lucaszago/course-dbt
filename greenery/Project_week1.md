@@ -49,7 +49,8 @@ SELECT
     COUNT(DISTINCT CASE WHEN orders=1 THEN user_id END) 
     ,COUNT(DISTINCT CASE WHEN orders=2 THEN user_id END) 
     ,COUNT(DISTINCT CASE WHEN orders>=3 THEN user_id END)
-from cte```
+from cte
+```
 
 
 
