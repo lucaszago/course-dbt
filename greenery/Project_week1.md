@@ -31,7 +31,8 @@ SELECT
 DATEDIFF(day,DATE_TRUNC(day,CREATED_AT),DATE_TRUNC(day,DELIVERED_AT)) AS COUNT_DAYS
 FROM ORDERS)
 SELECT ROUND(AVG(COUNT_DAYS),2)
-FROM CTE;```
+FROM CTE;
+```
 
 * How many users have only made one purchase? Two purchases? Three+ purchases?
 
