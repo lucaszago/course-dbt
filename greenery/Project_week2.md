@@ -1,7 +1,7 @@
 ### PROJECT QUESTIONS 
 - What is our user repeat rate?
 - 0.798387
-Query:
+- Query:
 ```
 WITH CTE AS (
 SELECT USER_ID,
