@@ -46,6 +46,7 @@ p_event.purchase_event/viewed * 100 AS con_rate_by_product
 FROM p_event
 LEFT JOIN page_view
 ON p_event.PRODUCT_ID = page_view.PRODUCT_ID
+GROUP BY 1,2,3
 )
 SELECT * FROM final 
 ```
