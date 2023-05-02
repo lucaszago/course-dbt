@@ -1,7 +1,8 @@
 ### PROJECT QUESTIONS 
 - What is our user repeat rate?
 - 0.798387
-Query:
+- Query:
+```
 WITH CTE AS (
 SELECT USER_ID,
 COUNT(DISTINCT ORDER_ID) AS cnt_orders
@@ -17,10 +18,12 @@ SELECT
  SUM(has_two_plus_purchases) AS two_plus_purchases,
  div0(two_plus_purchases,num_user_w_purchase) AS repeat_user_rate
  FROM USER_BUCKET;
+ ```
 
  - What are good indicators of a user who will likely purchase again? 
  - Maybe a good indicator of more purchases could be an user which did more than one purchase
  - Query:
+ ```
  WITH CTE AS (
 SELECT USER_ID,
 COUNT(DISTINCT ORDER_ID) AS cnt_orders
@@ -31,11 +34,13 @@ SELECT USER_ID,
 cnt_orders
 FROM CTE
 WHERE CNT_ORDERS >=2;
+```
 
 
  - What about indicators of users who are likely NOT to purchase again?
 - A good indicator could be an user which did only one purchase
 - Query: 
+```
 WITH CTE AS (
 SELECT USER_ID,
 COUNT(DISTINCT ORDER_ID) AS cnt_orders
@@ -46,10 +51,11 @@ SELECT USER_ID,
 cnt_orders
 FROM CTE
 WHERE CNT_ORDERS <=1;
+```
  
  If you had more data, what features would you want to look into to answer this question?
 - Another good metric could be event view per client, maybe they are looking for promos in the site
-
+```
 WITH page_view AS (SELECT
 USER_ID,
 EVENT_TYPE,
