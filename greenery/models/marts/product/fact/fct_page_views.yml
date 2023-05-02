@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: fct_page_views
+    description: "table of page views"
+    columns:
+      - name: event_id
+        description: "id of event"
+
+      - name: session_id
+        description: "id of sessions"
+
+      - name: product_id
+        description: "id of product"
+
+      - name: product_name
+        description: "name of products"
+
+      - name: page_views
+        description: "page counts"
+
+      - name: add_to_carts
+        description: "add to carts count"
+
+      - name: checkouts
+        description: "checkout count"
+
+      - name: package_shippeds
+        description: "package shipped"
