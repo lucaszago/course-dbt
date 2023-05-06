@@ -1,4 +1,4 @@
-* Which products had their inventory change from week 3 to week 4? 
+1. Which products had their inventory change from week 3 to week 4? 
 
 * Monstera
 * String of pearls
@@ -6,6 +6,7 @@
 * Pothos
 * Philodendron
 * ZZ Plant
+
 Query:
 ```
 with updated_snapshot as (
@@ -19,7 +20,8 @@ join updated_snapshot
 on products_snapshot.dbt_valid_from = updated_snapshot.max_date;
 
 ```
-* Now that we have 3 weeks of snapshot data, can you use the inventory changes to determine which products had the most fluctuations in inventory? 
+2.  Now that we have 3 weeks of snapshot data, can you use the inventory changes to determine which products had the most fluctuations in inventory? 
+
 * Bamboo	
 * ZZ Plant	
 * Philodendron	
@@ -30,6 +32,7 @@ on products_snapshot.dbt_valid_from = updated_snapshot.max_date;
 * Snake Plant	
 * Peace Lily	
 * Calathea Makoyana	
+
 Query: 
 ```
 select
@@ -40,9 +43,11 @@ group by 1
 order by inventory_changes desc limit 10;
 ```
 
-Did we have any items go out of stock in the last 3 weeks? 
+3. Did we have any items go out of stock in the last 3 weeks? 
+
 * String of pearls
 * Pothos
+
 Query:
 ```
 select 
@@ -53,9 +58,10 @@ FROM products_snapshot
 WHERE inventory_reached_zero = 'True'
 ```
 
-* How are our users moving through the product funnel?
+4. How are our users moving through the product funnel?
 
 1871 sessions resulted in a page view,986 sessions resulted in the user adding a product to their cart and 366 sessions resulted in the user completing a purchase.
+
 Query: 
 ```
 WITH funnel AS (SELECT * 
@@ -71,6 +77,6 @@ final AS (
 )
 SELECT * FROM final
 ```
-* Which steps in the funnel have largest drop off points
+5.  Which steps in the funnel have largest drop off points
 
 The largest drop off points in the funnel are between customers adding a product to their cart and successfully checking out (36.6% cart-to-checkout conversion rate) followed by customers viewing a product and then adding it to their cart (52.7% add_to_cart conversion rate).
