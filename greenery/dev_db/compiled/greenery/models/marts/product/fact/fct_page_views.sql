@@ -22,6 +22,6 @@ final AS (
     FROM events
     LEFT JOIN products
         ON events.product_id = products.product_id
-  --  GROUP BY 1, 2, 3, 4
+    GROUP BY 1, 2, 3, 4, 5, 6, 7, 8
 )
 SELECT * FROM final
