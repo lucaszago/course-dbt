@@ -1,0 +1,14 @@
+version: 2 
+
+exposures:
+  - name: Sales Dashboard
+    description: >
+      Critical model to sales dashboard
+    type: dashboard
+    maturity: high
+    owner:
+      name: Lucas Zago.
+      email: lzago@lz.com
+    depends_on:
+    - ref('fct_sales') 
+ 
